@@ -16,7 +16,7 @@
     <!-- Topic da salvare nella bag -->
     <arg name="topic_rosbag" default="/team/sensors/imu /team/sensors/gps /team/sensors/depth /team/sensors/dvl /team_sapienza/range /team_sapienza_offline/state"/>
     <!-- Tipo di filtro -->
-    <arg name="filter_type" default="all_beacon_error"/>
+    <arg name="filter_type" default="imu_range"/>
     <!-- Path rosbag -->
     <arg name="path_rosbag" default="/home/korovev/Documents/ponza_filter_bis/src/nodo_sapienza/bagfiles/$(arg filter_type)"/>
 
