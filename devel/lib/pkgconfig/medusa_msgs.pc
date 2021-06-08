@@ -1,0 +1,8 @@
+prefix=/home/korovev/Documents/ponza_filter_bis/devel
+
+Name: medusa_msgs
+Description: Description of medusa_msgs
+Version: 0.0.1
+Cflags: -I/home/korovev/Documents/ponza_filter_bis/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime std_msgs

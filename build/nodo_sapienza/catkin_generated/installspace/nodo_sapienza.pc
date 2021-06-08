@@ -1,0 +1,8 @@
+prefix=/home/korovev/Documents/ponza_filter_bis/install
+
+Name: nodo_sapienza
+Description: Description of nodo_sapienza
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

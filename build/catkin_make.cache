@@ -1,0 +1,2 @@
+medusa_msgs:nodo_sapienza
+-DCATKIN_DEVEL_PREFIX=/home/korovev/Documents/ponza_filter_bis/devel -DCMAKE_INSTALL_PREFIX=/home/korovev/Documents/ponza_filter_bis/install -G Unix Makefiles

@@ -1,0 +1,37 @@
+<launch>
+    <!-- posizione degli anchors (lat, lon, depth) -->
+    <arg name="anchors" default="[[40.90419, 12.96163, 1.5], [40.9041, 12.96131, 1.5], [40.90445, 12.96101, 1.5],[40.90472, 12.96118, 1.5]]"/>
+    <!-- posizione di riferimento per coordinate ned (lat, lon, depth) -->
+    <arg name="reference_position" default="[40.905000, 12.959967, 0.0]"/>
+    <!-- posizione di riferimento per coordinate ned (lat, lon, depth) -->
+    <arg name="initial_position" default="[40.904522, 12.961190, 0.0]"/>
+    <!-- velocità di aggiornamento profondità (hz) -->
+    <arg name="depth_rate" default="10"/>
+    <!-- vellocità di aggiornamento imu (hz) -->
+    <arg name="imu_rate" default="10"/>
+    <!-- settare a false se non si vogliono salvare i dati una rosbag -->
+    <arg name="record_rosbag" default="true"/>
+    <!-- settare a True se si vogliono attivare info di debug per il filtro -->
+    <arg name="debug" default="False"/>
+    <!-- Topic da salvare nella bag -->
+    <arg name="topic_rosbag" default="/team/sensors/imu /team/sensors/gps /team/sensors/depth /team/sensors/dvl /team_sapienza/range /team_sapienza_offline/state"/>
+    <!-- Tipo di filtro -->
+    <arg name="filter_type" default="all_beacon_error"/>
+    <!-- Path rosbag -->
+    <arg name="path_rosbag" default="/home/korovev/Documents/ponza_filter_bis/src/nodo_sapienza/bagfiles/$(arg filter_type)"/>
+
+
+    <node pkg="nodo_sapienza" name="nodo_sapi" type="nodo_sap.py" output="screen" >
+        <rosparam param="anchors" subst_value="True">$(arg anchors)</rosparam> 
+        <rosparam param="reference_position" subst_value="True">$(arg reference_position)</rosparam> 
+        <rosparam param="initial_position" subst_value="True">$(arg initial_position)</rosparam> 
+        <param name="depth_rate" value="$(arg depth_rate)" />
+        <param name="imu_rate" value="$(arg imu_rate)" />
+        <param name="debug" value="$(arg debug)" />
+        <param name="filter_type" value="$(arg filter_type)" />
+    </node>
+
+    <node pkg="rosbag" type="record" name="rosbag_record"
+       args="$(arg topic_rosbag) -O $(arg path_rosbag)" if="$(arg record_rosbag)" />
+
+</launch>
