@@ -18,20 +18,26 @@
     <!-- Tipo di filtro -->
     <arg name="filter_type" default="range_beacon_error"/>
     <!-- Path rosbag -->
-    <arg name="path_rosbag" default="/home/korovev/Documents/ponza_filter_bis/src/nodo_sapienza/bagfiles/$(arg filter_type)"/>
+    <arg name="path_rosbag" default="/home/irene/Documents/ponza_filter_paper/src/nodo_sapienza/bagfiles/$(arg filter_type)"/>
+    <!-- Path rosbag -->
+    <arg name="threshold" default="3"/>
+    <!-- Path rosbag -->
+    <arg name="used_beacon" default="[1,2,3,4]"/>
 
 
     <node pkg="nodo_sapienza" name="nodo_sapi" type="nodo_sap.py" output="screen" >
         <rosparam param="anchors" subst_value="True">$(arg anchors)</rosparam> 
         <rosparam param="reference_position" subst_value="True">$(arg reference_position)</rosparam> 
         <rosparam param="initial_position" subst_value="True">$(arg initial_position)</rosparam> 
+        <rosparam param="used_beacon" subst_value="True">$(arg used_beacon)</rosparam> 
         <param name="depth_rate" value="$(arg depth_rate)" />
         <param name="imu_rate" value="$(arg imu_rate)" />
         <param name="debug" value="$(arg debug)" />
         <param name="filter_type" value="$(arg filter_type)" />
+        <param name="threshold" value="$(arg threshold)" />
     </node>
 
     <node pkg="rosbag" type="record" name="rosbag_record"
-       args="$(arg topic_rosbag) -O $(arg path_rosbag)" if="$(arg record_rosbag)" />
+       args="$(arg topic_rosbag) -O $(arg path_rosbag)_thr_$(arg threshold)_beac_$(arg used_beacon)" if="$(arg record_rosbag)" />
 
 </launch>

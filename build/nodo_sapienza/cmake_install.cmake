@@ -1,8 +1,8 @@
-# Install script for directory: /home/korovev/Documents/ponza_filter_bis/src/nodo_sapienza
+# Install script for directory: /home/irene/Documents/ponza_filter_paper/src/nodo_sapienza
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/korovev/Documents/ponza_filter_bis/install")
+  set(CMAKE_INSTALL_PREFIX "/home/irene/Documents/ponza_filter_paper/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/korovev/Documents/ponza_filter_bis/build/nodo_sapienza/catkin_generated/installspace/nodo_sapienza.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/irene/Documents/ponza_filter_paper/build/nodo_sapienza/catkin_generated/installspace/nodo_sapienza.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nodo_sapienza/cmake" TYPE FILE FILES
-    "/home/korovev/Documents/ponza_filter_bis/build/nodo_sapienza/catkin_generated/installspace/nodo_sapienzaConfig.cmake"
-    "/home/korovev/Documents/ponza_filter_bis/build/nodo_sapienza/catkin_generated/installspace/nodo_sapienzaConfig-version.cmake"
+    "/home/irene/Documents/ponza_filter_paper/build/nodo_sapienza/catkin_generated/installspace/nodo_sapienzaConfig.cmake"
+    "/home/irene/Documents/ponza_filter_paper/build/nodo_sapienza/catkin_generated/installspace/nodo_sapienzaConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nodo_sapienza" TYPE FILE FILES "/home/korovev/Documents/ponza_filter_bis/src/nodo_sapienza/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nodo_sapienza" TYPE FILE FILES "/home/irene/Documents/ponza_filter_paper/src/nodo_sapienza/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/nodo_sapienza" TYPE PROGRAM FILES "/home/korovev/Documents/ponza_filter_bis/build/nodo_sapienza/catkin_generated/installspace/nodo_sap.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/nodo_sapienza" TYPE PROGRAM FILES "/home/irene/Documents/ponza_filter_paper/build/nodo_sapienza/catkin_generated/installspace/nodo_sap.py")
 endif()
 

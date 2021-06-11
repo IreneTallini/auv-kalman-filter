@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp
+Change Dir: /home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8e64e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8e64e.dir/build.make CMakeFiles/cmTC_8e64e.dir/build
-make[1]: Entering directory '/home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8e64e.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_8e64e.dir/CheckSymbolExists.c.o   -c /home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_8e64e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e64e.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8e64e.dir/CheckSymbolExists.c.o  -o cmTC_8e64e 
-CMakeFiles/cmTC_8e64e.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_25ce4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_25ce4.dir/build.make CMakeFiles/cmTC_25ce4.dir/build
+make[1]: Entering directory '/home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_25ce4.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_25ce4.dir/CheckSymbolExists.c.o   -c /home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_25ce4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_25ce4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_25ce4.dir/CheckSymbolExists.c.o  -o cmTC_25ce4 
+CMakeFiles/cmTC_25ce4.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_8e64e.dir/build.make:97: recipe for target 'cmTC_8e64e' failed
-make[1]: *** [cmTC_8e64e] Error 1
-make[1]: Leaving directory '/home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_8e64e/fast' failed
-make: *** [cmTC_8e64e/fast] Error 2
+CMakeFiles/cmTC_25ce4.dir/build.make:97: recipe for target 'cmTC_25ce4' failed
+make[1]: *** [cmTC_25ce4] Error 1
+make[1]: Leaving directory '/home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_25ce4/fast' failed
+make: *** [cmTC_25ce4/fast] Error 2
 
-File /home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp
+Change Dir: /home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f2675/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f2675.dir/build.make CMakeFiles/cmTC_f2675.dir/build
-make[1]: Entering directory '/home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f2675.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f2675.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_f2675
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2675.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f2675.dir/CheckFunctionExists.c.o  -o cmTC_f2675 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_db272/fast"
+/usr/bin/make -f CMakeFiles/cmTC_db272.dir/build.make CMakeFiles/cmTC_db272.dir/build
+make[1]: Entering directory '/home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db272.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_db272.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_db272
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db272.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_db272.dir/CheckFunctionExists.c.o  -o cmTC_db272 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_f2675.dir/build.make:97: recipe for target 'cmTC_f2675' failed
-make[1]: *** [cmTC_f2675] Error 1
-make[1]: Leaving directory '/home/korovev/Documents/ponza_filter_bis/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_f2675/fast' failed
-make: *** [cmTC_f2675/fast] Error 2
+CMakeFiles/cmTC_db272.dir/build.make:97: recipe for target 'cmTC_db272' failed
+make[1]: *** [cmTC_db272] Error 1
+make[1]: Leaving directory '/home/irene/Documents/ponza_filter_paper/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_db272/fast' failed
+make: *** [cmTC_db272/fast] Error 2
 
 

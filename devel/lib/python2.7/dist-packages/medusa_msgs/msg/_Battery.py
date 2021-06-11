@@ -98,8 +98,7 @@ float64 down_vel"""
     unpack serialized message in str into this message instance
     :param str: byte array of serialized message, ``str``
     """
-    if python3:
-      codecs.lookup_error("rosmsg").msg_type = self._type
+    codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.nav_status is None:
         self.nav_status = medusa_msgs.msg.NavStatus()
@@ -134,8 +133,7 @@ float64 down_vel"""
     :param str: byte array of serialized message, ``str``
     :param numpy: numpy python module
     """
-    if python3:
-      codecs.lookup_error("rosmsg").msg_type = self._type
+    codecs.lookup_error("rosmsg").msg_type = self._type
     try:
       if self.nav_status is None:
         self.nav_status = medusa_msgs.msg.NavStatus()

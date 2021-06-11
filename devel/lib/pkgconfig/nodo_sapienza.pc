@@ -1,4 +1,4 @@
-prefix=/home/korovev/Documents/ponza_filter_bis/devel
+prefix=/home/irene/Documents/ponza_filter_paper/devel
 
 Name: nodo_sapienza
 Description: Description of nodo_sapienza

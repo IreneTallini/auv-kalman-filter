@@ -7,10 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/korovev/Documents/ponza_filter_bis/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/korovev/Documents/ponza_filter_bis/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/korovev/Documents/ponza_filter_bis/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD='/home/korovev/Documents/ponza_filter_bis/build'
-export PYTHONPATH="/home/korovev/Documents/ponza_filter_bis/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/korovev/Documents/ponza_filter_bis/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/korovev/Documents/ponza_filter_bis/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/irene/Documents/ponza_filter_paper/devel:$CMAKE_PREFIX_PATH"
+export PATH='/opt/ros/melodic/bin:/usr/share/tcltk/tcl8.5:/home/irene/omnetpp-4.2.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/irene/turbovnc:/home/irene/.local/bin:/home/irene/at/Bellhop'
+export PWD='/home/irene/Documents/ponza_filter_paper/build'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/irene/Documents/ponza_filter_paper/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/irene/Documents/ponza_filter_paper/src:$ROS_PACKAGE_PATH"

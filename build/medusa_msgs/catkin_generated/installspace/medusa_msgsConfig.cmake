@@ -67,14 +67,14 @@ set(medusa_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(medusa_msgs_SOURCE_PREFIX /home/korovev/Documents/ponza_filter_bis/src/medusa_msgs)
-  set(medusa_msgs_DEVEL_PREFIX /home/korovev/Documents/ponza_filter_bis/devel)
+  set(medusa_msgs_SOURCE_PREFIX /home/irene/Documents/ponza_filter_paper/src/medusa_msgs)
+  set(medusa_msgs_DEVEL_PREFIX /home/irene/Documents/ponza_filter_paper/devel)
   set(medusa_msgs_INSTALL_PREFIX "")
   set(medusa_msgs_PREFIX ${medusa_msgs_DEVEL_PREFIX})
 else()
   set(medusa_msgs_SOURCE_PREFIX "")
   set(medusa_msgs_DEVEL_PREFIX "")
-  set(medusa_msgs_INSTALL_PREFIX /home/korovev/Documents/ponza_filter_bis/install)
+  set(medusa_msgs_INSTALL_PREFIX /home/irene/Documents/ponza_filter_paper/install)
   set(medusa_msgs_PREFIX ${medusa_msgs_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/korovev/Documents/ponza_filter_bis/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/irene/Documents/ponza_filter_paper/install/lib;/home/irene/Documents/EECE5554_RoboticsSensing/LAB2/devel/lib;/home/irene/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

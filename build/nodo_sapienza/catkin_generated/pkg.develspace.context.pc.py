@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "nodo_sapienza"
-PROJECT_SPACE_DIR = "/home/korovev/Documents/ponza_filter_bis/devel"
+PROJECT_SPACE_DIR = "/home/irene/Documents/ponza_filter_paper/devel"
 PROJECT_VERSION = "0.0.0"

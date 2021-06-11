@@ -30,9 +30,8 @@ class Filter:
         ############################ RANGE ######################################
         self.n_ranges     = n_ranges
         self.R            = beacon_err*np.eye(threshold*3) # Ranges covariance
-        self.R[2, 2]      = range_std
-        self.R[5, 5]      = range_std
-        self.R[8, 8]      = range_std        
+        for i in range(1, threshold):
+            self.R[threshold * i - 1, threshold * i - 1] = range_std        
         self.ranges       = np.zeros(n_ranges)           # Ranges measurements
         self.anch_pos     = anch_pos                     # Anchors positions
         self.rg_std       = range_std
@@ -89,21 +88,38 @@ class Filter:
         p  = p.T 
         ps = ps.T
 
-        dp         = p[:,:2] - ps[:,:2]
-        dp         = dp/np.linalg.norm(p-ps, axis=1).reshape(dp.shape[0], 1)
-        jacob      = np.concatenate((dp, np.ones((ps.shape[0], 1) )), axis=1)
-        first      = np.expand_dims(jacob[0], axis=0)
-        second     = np.expand_dims(jacob[1], axis=0)
-        third      = np.expand_dims(jacob[2], axis=0)
-        three_zeros = np.zeros((1, 3))
-        six_zeros   = np.zeros((1, 6))
-        new_jacob  = np.concatenate(
-            ( 
-                np.concatenate((first, six_zeros), axis=1),
-                np.concatenate((three_zeros, second, three_zeros), axis=1),
-                np.concatenate((six_zeros, third), axis=1)
-            ), axis=0
-        )
+        dp = p[:, :2] - ps[:, :2]
+        dp = dp / np.linalg.norm(p - ps, axis=1).reshape(dp.shape[0], 1)
+        jacob = np.concatenate((dp, np.ones((ps.shape[0], 1))), axis=1)
+
+        if self.threshold == 1:
+            first = np.expand_dims(jacob[0], axis=0)
+            new_jacob = first
+        elif self.threshold == 2:
+            first = np.expand_dims(jacob[0], axis=0)
+            second = np.expand_dims(jacob[1], axis=0)
+            three_zeros = np.zeros((1, 3))
+            new_jacob = np.concatenate(
+                (
+                    np.concatenate((first, three_zeros), axis=1),
+                    np.concatenate((three_zeros, second), axis=1),
+                ),
+                axis=0,
+            )
+        elif self.threshold == 3:
+            first = np.expand_dims(jacob[0], axis=0)
+            second = np.expand_dims(jacob[1], axis=0)
+            third = np.expand_dims(jacob[2], axis=0)
+            three_zeros = np.zeros((1, 3))
+            six_zeros = np.zeros((1, 6))
+            new_jacob = np.concatenate(
+                (
+                    np.concatenate((first, six_zeros), axis=1),
+                    np.concatenate((three_zeros, second, three_zeros), axis=1),
+                    np.concatenate((six_zeros, third), axis=1),
+                ),
+                axis=0,
+            )
         return new_jacob
 
 

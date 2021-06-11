@@ -19,7 +19,7 @@ class Filter:
     ):
 
         ############################## IMU and DEPTH #########################################
-        self.state = np.array([[init_pos_ned[0]], [init_pos_ned[1]], [1], [1]])  # State
+        self.state = np.array([[init_pos_ned[0]], [init_pos_ned[1]], [0.3], [0.3]])  # State
         self.P = np.eye(4)  # Covariance
         self.dt = 1 / float(hz_cvm)  # Time difference for imu
         self.dt_depth = 1 / float(hz_depth)  # Time difference for depth sensor
@@ -38,9 +38,6 @@ class Filter:
         self.R = beacon_err * np.eye(threshold * 3)  # Ranges covariance
         for i in range(1, threshold):
             self.R[threshold * i - 1, threshold * i - 1] = range_std
-        # self.R[2, 2]      = range_std
-        # self.R[5, 5]      = range_std
-        # self.R[8, 8]      = range_std
         self.ranges = np.zeros(n_ranges)  # Ranges measurements
         self.anch_pos = anch_pos  # Anchors positions
         self.rg_std = range_std

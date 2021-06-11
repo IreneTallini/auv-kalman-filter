@@ -70,7 +70,9 @@ class Filter:
         """Matrix of predict step"""
 
         return np.array(
-            [[1, 0, self.dt * np.cos(yaw)], [0, 1, self.dt * np.sin(yaw)], [0, 0, 1]]
+            [[1, 0, self.dt * np.cos(yaw)], 
+             [0, 1, self.dt * np.sin(yaw)], 
+             [0, 0, 1]]
         )
 
     def H(self, p, ps):
@@ -95,11 +97,12 @@ class Filter:
         """Update step of the Kalman filter"""
 
         for i, t in enumerate(self.times_ranges):
-            if t != 0 and ts - t > 6:
+            if t != 0 and ts - t > 10:
                 self.ranges[i] = 0
                 self.times_ranges[i] = 0
 
         self.ranges[anch_id - 1] = rg
+        self.times_ranges[i] = ts
 
         not_zero = np.count_nonzero(self.ranges)
         if not_zero >= self.threshold:
@@ -127,6 +130,7 @@ class Filter:
             self.P = np.dot(np.eye(3) - np.dot(K, H), self.P)
 
             self.ranges = np.zeros(self.n_ranges)
+            self.times_ranges = np.zeros(self.n_ranges)
 
     def predict(self, yaw):
         """Predict step of the Kalman filter"""

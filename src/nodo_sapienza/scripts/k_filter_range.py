@@ -10,8 +10,8 @@ class Filter:
         ############################## IMU and DEPTH #########################################
         self.state    = np.array([ [init_pos_ned[0]],
                                    [init_pos_ned[1]], 
-                                   [              1],
-                                   [              1]])     # State
+                                   [            0.3],
+                                   [            0.3]])     # State
         self.P        = np.eye(4)                          # Covariance
         self.dt       = 1/float(hz_cvm)                    # Time difference for imu
         self.dt_depth = 1/float(hz_depth)                  # Time difference for depth sensor

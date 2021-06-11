@@ -1,4 +1,4 @@
-prefix=/home/korovev/Documents/ponza_filter_bis/install
+prefix=/home/irene/Documents/ponza_filter_paper/install
 
 Name: medusa_msgs
 Description: Description of medusa_msgs

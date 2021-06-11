@@ -121,22 +121,23 @@ class nodo_principale:
 
     def range_callback(self, data):
 
-        self.ekf.update(data.node, data.distance, data.time)
+        if data.node in used_beacon:
+            self.ekf.update(data.node, data.distance, data.time)
 
-        lat, lon, h = pm.ned2geodetic(
-            self.ekf.state[0],
-            self.ekf.state[1],
-            0,
-            self.ref_pos[0],
-            self.ref_pos[1],
-            self.ref_pos[2],
-        )
-        msg = NavStatus()
-        msg.position = Position(lat, lon, self.ekf.depth, 0)
-        msg.attitude = AttitudeEuler(self.ekf.roll, self.ekf.pitch, self.ekf.yaw)
-        msg.linear_velocity = VelocityNED(self.ekf.v_x, self.ekf.v_y, self.ekf.v_z)
-        msg.timestamp = rospy.get_rostime()
-        self.state_pub.publish(msg)
+            lat, lon, h = pm.ned2geodetic(
+                self.ekf.state[0],
+                self.ekf.state[1],
+                0,
+                self.ref_pos[0],
+                self.ref_pos[1],
+                self.ref_pos[2],
+            )
+            msg = NavStatus()
+            msg.position = Position(lat, lon, self.ekf.depth, 0)
+            msg.attitude = AttitudeEuler(self.ekf.roll, self.ekf.pitch, self.ekf.yaw)
+            msg.linear_velocity = VelocityNED(self.ekf.v_x, self.ekf.v_y, self.ekf.v_z)
+            msg.timestamp = rospy.get_rostime()
+            self.state_pub.publish(msg)
 
     def imu_callback(self, data):
         yaw = data.yaw
@@ -189,10 +190,15 @@ if __name__ == "__main__":
     imu_rate = rospy.get_param("~imu_rate")
     depth_rate = rospy.get_param("~depth_rate")
     filter_type = rospy.get_param("~filter_type")
+    used_beacon = rospy.get_param("~used_beacon", False)
+    threshold = rospy.get_param("~threshold")
     print("filter type = " + filter_type)
+    print("threshold = " + str(threshold))
+    print("used_beacon = ")
+    print(used_beacon)
+
 
     anch_pos = np.array(anch_pos)
-    threshold = 3
     debug = rospy.get_param("~debug", False)
 
     ################# MEANS ####################
